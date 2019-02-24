@@ -14,7 +14,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#define INT_MAX 2147483647 // Take all the int values which can be considered for fast exectution change INT_MAx to a small digit of thousand or hundred.
+#define INT_MAX 2147483647 // Take all the int values which can be considered for, fast exectution change INT_MAx to a small digit of thousand's or hundred.
 
 bool ft_numsum(int *a, int final_sum, size_t size)
 {
@@ -25,11 +25,11 @@ bool ft_numsum(int *a, int final_sum, size_t size)
 	while (size > i)
 	{
 		find_num = final_sum - a[i];
-		if (hash_map[find_num] == 1 && find_num > 0)
+		if (hash_map[find_num] == 1 && find_num > 0) // Hash_MAP for the value's
 		{
 			return (true);
 		}
-		hash_map[a[i]] = 1;
+		hash_map[a[i]] = 1; // Set the array value in Hash_Map.
 		i++;
 	}
 	return (false);
@@ -38,8 +38,7 @@ bool ft_numsum(int *a, int final_sum, size_t size)
 int main (void)
 {
 	int a[4] = {10, 15, 3, 7};
-	size_t size = (sizeof(a)) / (sizeof(a[0]));
-	printf("%zu", size);
+	size_t size = (sizeof(a)) / (sizeof(a[0])); // size of Array
 	int final_sum = 17;
 	bool b = ft_numsum(a, final_sum, size);
 	printf(b ? "true" : "false");
