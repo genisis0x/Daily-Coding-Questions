@@ -25,7 +25,7 @@ bool ft_numsum(int *a, int final_sum, size_t size)
 	while (size > i)
 	{
 		find_num = final_sum - a[i];
-		if (hash_map[find_num] == 1 && find_num > 0) // Hash_MAP for the value's
+		if (hash_map[find_num] == 1 ) // Hash_MAP for the value's
 		{
 			return (true);
 		}
