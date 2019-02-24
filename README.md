@@ -1,6 +1,6 @@
 # Leet-Code- Big companies Questions.
 
-This repository will help you to see the solutions done by me for some of the leet code problems.
+This repository will help you to see the solutions done by me for some of the leet code problems and some of the good Questions asked by Top companies.
 
 I am upgrading this repository each day by adding the problems.
 
