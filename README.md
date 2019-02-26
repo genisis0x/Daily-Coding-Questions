@@ -4,6 +4,6 @@ This repository will help you to see the solutions done by me for some of the le
 
 I am upgrading this repository each day by adding the problems.
 
-If you got any issue with ther solution and the problem feel free to discuss.
+If you find this helpful, please star this repo or follow me :D
 
 Email->manmeetparmar@outlook.com
