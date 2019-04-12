@@ -11,7 +11,7 @@ int partition(int arr[], int low, int high)
     int i = (low - 1);
     int pivot = arr[high];
 
-    for(int j = 0; j <= high - 1; j++)
+    for(int j = low; j <= high - 1; j++)
     {
         if (arr[j] <= pivot)
         {
@@ -25,10 +25,12 @@ int partition(int arr[], int low, int high)
 
 void quick_sort(int arr[], int low, int high)
 {
-    int partition_index = partition (arr, low, high);
-
-    quick_sort(arr, low, partition_index - 1);
-    quick_sort(arr, partition_index + 1, high);
+	if(low < high)
+	{
+		int partition_index = partition (arr, low, high);
+		quick_sort(arr, low, partition_index - 1);
+		quick_sort(arr, partition_index + 1, high);
+	}
 }
 
 void print_arr(int arr[], int size)
@@ -41,7 +43,7 @@ void print_arr(int arr[], int size)
 
 int main(void)
 {
-    int arr[] = {9, 6, 7, 8, 5};
+    int arr[] = {9, 6, 10, 8, 5};
     int size = sizeof(arr) / sizeof(arr[0]);
     quick_sort(arr, 0, size - 1);
     print_arr(arr, size);
