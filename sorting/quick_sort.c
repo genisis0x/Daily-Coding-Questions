@@ -6,7 +6,8 @@ void swap(int *a, int *b)
     *b = temp;
 }
 
-int partition(int arr[], int low, int high)
+int partition(int arr[], int low, int high) // used to part the function and return the index at which left part is 
+	//less then the index and right part is greater than the index.
 {
     int i = low;
     int pivot = arr[high];
@@ -28,8 +29,8 @@ void quick_sort(int arr[], int low, int high)
 	if(low < high)
 	{
 		int partition_index = partition (arr, low, high);
-		quick_sort(arr, low, partition_index - 1);
-		quick_sort(arr, partition_index + 1, high);
+		quick_sort(arr, low, partition_index - 1); // recursively call the left part of the partition_index
+		quick_sort(arr, partition_index + 1, high); // recursively call the right part of the partition_index
 	}
 }
 
