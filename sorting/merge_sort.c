@@ -46,7 +46,7 @@ void merge_sort(int tab[], unsigned int start, unsigned int end)
 {
     if (start < end)
     {
-        unsigned int middle = start + (end - start) / 2; // or (start + end) / 2
+        unsigned int middle = start + (end - start) / 2; // or (start + end) / 2, this is not taken because the addition will outbound the int range.
         merge_sort(tab, start, middle);
         merge_sort(tab, middle + 1, end);
 
