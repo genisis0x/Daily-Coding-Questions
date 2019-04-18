@@ -1,4 +1,4 @@
-*int largestRectangleArea(int heights, int heightsSize)
+int largestRectangleArea(int heights, int heightsSize)
 {
 int stack = (int)malloc(heightsSize*sizeof(int));
 int max_area = 0, area = 0;
@@ -29,5 +29,4 @@ while(position >= 0) // Empty all the indexs of the stack and see if there is an
 free(stack);
 return max_area;
 }
-**
 
