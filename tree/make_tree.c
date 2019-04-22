@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef struct tree // struct of a node
+typedef struct tree // struct of a node.
 {
 	int data;
 	struct tree *left;
