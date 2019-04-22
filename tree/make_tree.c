@@ -58,7 +58,7 @@ t_list *ft_tree_maker(int inf[], int pre[], int start, int end) // will make the
 	return t_node; // return the node 
 }
 
-void print_post_fix(t_list *t) // printing the postfix expresion.
+void print_post_fix(t_list *t) // printing the postfix expresion
 {
 	if (t == NULL)
 		return ;
