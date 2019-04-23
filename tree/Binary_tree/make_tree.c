@@ -6,7 +6,7 @@
 /*   By: maparmar <maparmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/17 19:37:28 by maparmar          #+#    #+#             */
-/*   Updated: 2019/04/22 20:25:02 by maparmar         ###   ########.fr       */
+/*   Updated: 2019/04/22 20:35:34 by maparmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_bst *insert(t_bst *root, int item)
 {
 	if (!root)
 	{
-		root = new_node(item);
+		root = ft_new_node(item);
 	}
 	else if (item <= root->value)
 		root->left = insert(root->left, item);
