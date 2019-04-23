@@ -33,7 +33,7 @@ t_bst *delete_node(t_bst *root, int value)
             free(root);
             root = NULL;
         }
-        // Case 2: 1 chid
+        // Case 2: 1 child
         else if (root->left == NULL || root->right == NULL)
         {
             if (root->left == NULL)
@@ -49,7 +49,7 @@ t_bst *delete_node(t_bst *root, int value)
                 free(temp);
             }
         }
-        // Case 3
+        // Case 3: 2 child 
         else
         {
             t_bst *temp = find_min(root->right);
