@@ -6,14 +6,14 @@
 /*   By: maparmar <maparmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/22 18:15:28 by maparmar          #+#    #+#             */
-/*   Updated: 2019/04/22 20:34:14 by maparmar         ###   ########.fr       */
+/*   Updated: 2019/04/22 23:13:31 by maparmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
+#include <_types.h>
 #define max(a, b) (a < b) ? b : a
 
 typedef struct Bst_Node
@@ -33,3 +33,5 @@ void print_post_fix(t_bst *t);
 void print_in_fix(t_bst *t);
 int search(t_bst *root, int item);
 t_bst *delete_node(t_bst *root, int value);
+int check_bst(t_bst *root);
+int check_is_bst(t_bst *root, int min_value, int max_value);

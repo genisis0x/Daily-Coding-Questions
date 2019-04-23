@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparmar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: maparmar <maparmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/22 19:19:02 by maparmar          #+#    #+#             */
-/*   Updated: 2019/04/22 20:22:12 by maparmar         ###   ########.fr       */
+/*   Updated: 2019/04/22 23:21:09 by maparmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,12 @@ int main (void)
 	root  = delete_node(root, 10);
 	printf("The infix form after deleting 20 is\n");
 	print_in_fix(root);
+	
+	printf("---------------------------------------\n");
+	printf("---------------------------------------\n");
+	printf("Is the Tree is Valid Binary Tree? Say YES or NO \n");
+	if (check_bst(root)) printf("YES");
+	else
+		printf("NO");
 	return 0;
 }
