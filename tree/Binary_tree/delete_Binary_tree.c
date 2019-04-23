@@ -27,13 +27,13 @@ t_bst *delete_node(t_bst *root, int value)
     else if(root->value < value) root->right = delete_node(root->right, value);
     else
     {
-        // Case 1: No child or is_a_leaf
+        // Case 1: Root has no child or is_a_leaf
         if (root->left == NULL && root->right == NULL)
         {
             free(root);
             root = NULL;
         }
-        // Case 2: 1 child
+        // Case 2: Root has 1 child
         else if (root->left == NULL || root->right == NULL)
         {
             if (root->left == NULL)
@@ -49,7 +49,7 @@ t_bst *delete_node(t_bst *root, int value)
                 free(temp);
             }
         }
-        // Case 3: 2 child 
+        // Case 3: Root has 2 child 
         else
         {
             t_bst *temp = find_min(root->right);
