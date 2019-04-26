@@ -1,6 +1,6 @@
 # Daily Coding Questions.
 
-This repository will help you to see the solutions done by me for some of the leet code problems and the good Questions asked by Top companies.
+This repository will help you to see the solutions done by me for some of the coding Platform problems and the good Questions asked by Top companies.
 
 The solution are provided in C language. :trollface:
 
