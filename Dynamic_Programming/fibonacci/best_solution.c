@@ -1,4 +1,10 @@
+
+
+
 /*********************************** https://artofproblemsolving.com/wiki/index.php/Binet%27s_Formula **********************/
+
+/*********************************** BEST SOLUTION O(1)*******************************************************/
+
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
