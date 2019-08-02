@@ -32,6 +32,16 @@ typedef vector<ll> vl;
 using namespace std;
 
 
+int set_bits_cal(int n)
+{
+    int count = 0;
+    while(n)
+    {
+        count += n&1;
+        n >>= 1;
+    }
+	return count;
+}
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -39,14 +49,15 @@ int main()
 	freopen("output.txt", "w", stdout);
 	#endif
 
-    int n;
-    cin >>n;
-    vi arr(n);
-    F0R(i,n)
-        cin >>arr[i];
-    int temp = 0;
-    F0R(i,n)
-        temp ^= arr[i];
-    cout<<temp<<endl;
+    int t;
+    cin>>t;
+    while(t--){
+        int n1,n2;
+        cin>>n1;
+        cin>>n2;
+        int temp = (n1 ^ n2);
+        cout<<set_bits_cal(temp);
+        cout<<endl;
+        }
     return 0;
 }
