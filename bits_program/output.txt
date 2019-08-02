@@ -1,1 +1,8 @@
-9
+
+a
+b
+ab
+c
+ac
+bc
+abc

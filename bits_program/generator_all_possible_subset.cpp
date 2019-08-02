@@ -1,4 +1,5 @@
 // https://www.hackerearth.com/practice/notes/bit-manipulation/
+// Created by Manmeet Singh Parmar
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -32,19 +33,35 @@ typedef vector<ll> vl;
 using namespace std;
 
 
-void possiblesets(char a[], int n){
-    
-FOR_B_l(i, n)
+void filterchar(string a, int nb)
 {
-    F0R(j, n)
-        if(i &(1 << j))
-            cout<< a[j]<< " ";
-    cout << endl;
-}
+	int i = 0;
+	while(nb)
+	{
+		(nb & 1)?cout<<a[i]:cout<<"";
+		i++;
+		nb = nb>>1;
+	}
+	cout<<endl;
 }
 
-int32_t main(){
-    char a[] = "abc";
-    possiblesets(a, 3);
+void possiblesets(string a)
+{
+	int n = a.length();
+	int range = (1 << n) -1;
+	{
+		for(int i = 0; i <= range; i++)
+		filterchar(a, i);
+	}
+}
+int main(){
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+
+    string a;
+    cin>>a;
+    possiblesets(a);
     return 0;
 }
