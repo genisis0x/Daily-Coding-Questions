@@ -32,7 +32,7 @@ typedef vector<ll> vl;
 using namespace std;
 
 
-int set_bits_cal(int n)
+int count_bits(int n)
 {
     int count = 0;
     while(n)
@@ -55,9 +55,20 @@ int main()
         int n1,n2;
         cin>>n1;
         cin>>n2;
-        int temp = (n1 ^ n2);
-        cout<<set_bits_cal(temp);
+        int temp = (n1 ^ n2); // xor will give the different bits in both the numbers.
+        // TC -> O(No of bits)
+        cout<<count_bits(temp); // find the count_bits to count the bits in a number.
         cout<<endl;
         }
+       
+//MEthod 2
+       // with the hack of (n & n-1) we get the no of bits
+        // TC is O(no of set bits)
+    // while(n)
+    // {
+    //     count++;
+    //     n &= n-1;
+    // }
+
     return 0;
 }
