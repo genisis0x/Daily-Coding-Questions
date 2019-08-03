@@ -1,3 +1,2 @@
-0
-one no is 11
-Second no is 6
+3
+2
