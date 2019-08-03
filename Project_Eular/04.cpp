@@ -31,14 +31,15 @@ typedef vector<ll> vl;
 #define sz(x) (int)(x).size()
 using namespace std;
 
-int is_prime(ll n)
+int reverse(int n)
 {
-	for(int i = 2; i <= sqrt(n); i++)
+	int rev = 0;
+	while(n)
 	{
-		if(!(n % i))
-			return 0;
+		rev = rev * 10 + (n % 10);
+		n /=10;
 	}
-	return 1;
+	return rev;
 }
 
 int main()
@@ -47,23 +48,33 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 	#endif
-
-    ll n;
-    cin >> n;
-    int l_factor = 1;
-    while(!(n & 1))
-    {
-    	l_factor = 2;
-    	n /= 2;
-    }
-    for(ll i = 3; i <= sqrt(n); i+=2)
-    {
-    	if(!(n % i))
-    	{
-    		if(is_prime(i))
-    			l_factor = (l_factor > i) ? l_factor : i;
-    	}
-    }
-    cout<<l_factor<<endl;
-    return 0;
+	int product = 0;
+	int a = 100;
+	while(a <= 999)
+	{
+		int b = 100;
+		while(b <= 999)
+		{
+			int n = (a*b);
+			if((reverse(n) == n) && n > product)
+				product = n;
+			b++;
+		}
+		a++;
+	}
+	cout<<product<<endl;
+	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
