@@ -1,5 +1,2 @@
-Yes
-Yes
-Yes
-No
-Yes
+one no is 7
+Second no is 5
