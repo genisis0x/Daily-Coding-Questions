@@ -35,10 +35,9 @@ using namespace std;
 void util(vi &arr, int x_nb)
 {
 	int n = arr.size();
-	vi arr1(n);
-	vi arr2(n);
 	int t = 1;
 	int i = 0;
+	int temp1 = 0; int temp2 = 0;
 	while(t)
 	{
 		if(x_nb & (1 << i))
@@ -46,27 +45,14 @@ void util(vi &arr, int x_nb)
 		else
 			i++;
 	}
-	int k = 0;
-	int l = 0;
 	F0R(j, n)
 	{
 		if(arr[j] & (1 << i))
 		{
-			arr1[k] = arr[j];
-			k++;
-		}
-		else
-		{
-			arr2[l] = arr[j];
-			l++;
+			temp1 ^= arr[j];
 		}
 	}
-	k = 0; l = 0;
-	int temp1 = 0; int temp2 =0;
-	F0R(k, n)
-		temp1 ^=arr1[k];
-	F0R(l, n)
-		temp2 ^= arr2[l];
+	temp2 = x_nb ^ temp1;
 	cout << "one no is "<<temp1<<endl;
 	cout<<"Second no is "<<temp2;
 }
