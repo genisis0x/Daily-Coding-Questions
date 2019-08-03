@@ -1,8 +1,5 @@
-
-a
-b
-ab
-c
-ac
-bc
-abc
+Yes
+Yes
+Yes
+No
+Yes
