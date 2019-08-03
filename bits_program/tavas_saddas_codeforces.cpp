@@ -47,12 +47,12 @@ int main()
     int rank = 0;
     F0R(i, n)
     {
-    	rank += (1 << i);
+    	rank += (1 << i); // 1 + all the digits less than the n digits
     }
     F0R(i, n)
     {
     	if(str[i] == '7')
-    		rank += (1 << (n - i - 1));
+    		rank += (1 << (n - i - 1)); // if it is 7 then the no contain 4 will be smaller so calculate the total no of numbers less than that.
     }
     cout<<rank<<endl;
     return 0;
