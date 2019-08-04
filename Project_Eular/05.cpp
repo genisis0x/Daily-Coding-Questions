@@ -33,7 +33,7 @@ using namespace std;
 
 
 
-int gcd(ll a, ll b)
+int gcd_iterative(ll a, ll b)
 {
 	while(a != b)
 	{
@@ -45,9 +45,14 @@ int gcd(ll a, ll b)
 	return a;
 }
 
+int gcd_recursive(ll a, ll b)
+{
+	return b ? gcd_recursive(b, a % b) : a;
+}
+
 ll lcm(ll a, ll b)
 {
-	return a * (b / gcd(a, b));
+	return a * (b / gcd_recursive(a, b));
 }
 
 
