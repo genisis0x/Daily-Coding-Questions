@@ -32,17 +32,6 @@ typedef vector<ll> vl;
 using namespace std;
 
 
-int is_prime(ll n)
-{
-	for(ll i = 2; i <= sqrt(n); i++)
-	{
-		if(!(n % i))
-			return 0;
-	}
-	return 1;
-}
-
-
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -50,11 +39,31 @@ int main()
 	freopen("output.txt", "w", stdout);
 	#endif
 
-	ll s = 0;
-	for(ll a = 1; a < 2000000; a++)
+	ll n;
+	cin>>n;
+	int v[n];// input array
+	F0R(i, n)
+		cin>> v[i];
+	// int arr[n]; // ref arr;
+	F0R(i, n)
 	{
-		s += is_prime(a);
+		if(v[i] != i && v[i] >= 0)
+			swap(v[i], v[v[i]]);
 	}
-	cout<<s<<endl;
-	return 0;
+	F0R(i, n)
+		cout<<v[i]<< " ";
+	cout<<endl;
+    return 0;
 }
+
+
+	// F0R(i, n)
+	// {
+	// 	 if(v[i] != -1)
+	// 	 	arr[v[i]] = v[i];
+	// }
+	// F0R(i, n)
+	// {
+	// 	if(arr[i] != i)
+	// 		arr[i] = -1;
+	// }
