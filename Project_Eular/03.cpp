@@ -51,7 +51,7 @@ int main()
     ll n;
     cin >> n;
     int l_factor = 1;
-    while(!(n & 1))
+    while(!(n & 1)) // check if the no is even or not by !(n & 1)
     {
     	l_factor = 2;
     	n /= 2;
