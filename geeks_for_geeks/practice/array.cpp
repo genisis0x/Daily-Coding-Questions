@@ -1,3 +1,5 @@
+// https://www.geeksforgeeks.org/rearrange-array-arri/
+
 // Created by Manmeet Singh Parmar
 #include <bits/stdc++.h>
 using namespace std;
@@ -45,7 +47,7 @@ int main()
 	F0R(i, n)
 		cin>> v[i];
 	// int arr[n]; // ref arr;
-	F0R(i, n)
+	F0R(i, n) // good implementaion 
 	{
 		if(v[i] != i && v[i] >= 0)
 			swap(v[i], v[v[i]]);
