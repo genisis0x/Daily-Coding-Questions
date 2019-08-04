@@ -32,26 +32,6 @@ typedef vector<ll> vl;
 using namespace std;
 
 
-int is_prime(ll n)
-{
-	for(ll i = 2; i <= sqrt(n); i++)
-	{
-		if(!(n % i))
-			return 0;
-	}
-	return 1;
-}
-
-
-int next_prime(ll n)
-{
-	for(ll i = n; i < LONG_MAX; i++)
-		if(is_prime(i))
-			return i;
-	return 0;
-}
-
-
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -59,19 +39,14 @@ int main()
 	freopen("output.txt", "w", stdout);
 	#endif
 
-	int nb;
-	cin >>nb;
-	int c = 2;
-	ll n = 0;
-	// every prime no is of form 6n (+-) 1
-	while(c < nb)
-	{
-		n += 6;
-		if(is_prime(n + 1))
-			c++;
-		if(is_prime(n - 1))
-			c++;
-	}
-	cout<<next_prime(n);
-    return 0;
+	int n;
+	cin>>n;
+	for(int a = 1; a < 1000; a++)
+		for(int b = 1; b < 1000; b++)
+		{
+			int c = 1000 - a - b;
+			if(a * a + b * b == c * c)
+				cout<<a*b*c<<endl;
+		}
+	return 0;
 }
