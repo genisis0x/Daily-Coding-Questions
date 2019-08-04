@@ -61,10 +61,10 @@ int main()
 
 	int nb;
 	cin >>nb;
-	int c = 1;
+	int c = 2;
 	ll n = 0;
 	int flag = 1;
-	while(c < nb - 1)
+	while(c < nb)
 	{
 		n += 6;
 		if(is_prime(n + 1))
@@ -72,6 +72,6 @@ int main()
 		if(is_prime(n - 1))
 			c++;
 	}
-	cout<<next_prime(n + 1);
+	cout<<next_prime(n);
     return 0;
 }
