@@ -34,7 +34,9 @@ using namespace std;
 
 int is_prime(ll n)
 {
-	for(ll i = 2; i <= sqrt(n); i++)
+	if(!(n % 2))
+		return 0;
+	for(ll i = 3; i <= sqrt(n); i += 2)
 	{
 		if(!(n % i))
 			return 0;
@@ -50,11 +52,11 @@ int main()
 	freopen("output.txt", "w", stdout);
 	#endif
 
-	int n = 2000000;
-	int c = 0;
-    F0R(i, n)
+	ll n = 2000000;
+	ll c = 2;
+    for(ll i = 3; i< n; i += 2 )
     {
-    	c += is_prime(i);
+    	c = is_prime(i) ? c + i : c; 
     }
     cout<<c<<endl;
     return 0;
