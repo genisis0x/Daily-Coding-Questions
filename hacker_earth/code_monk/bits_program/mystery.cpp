@@ -47,6 +47,7 @@ int count_bits(ll n)
         c++;
         n &= n-1;   
     }
+
     return c;
 }
 
@@ -60,7 +61,7 @@ int main()
     #endif
     
     ll n;
-     while(cin>>n) // used to read the input when it reaches the End of file (not finite no of test cases are defined)
+     while(scanf("%lld", &n) != EOF) // used to read the input when it reaches the End of file (not finite no of test cases are defined)
          cout<<count_bits(n)<<"\n";
      return 0;
 }
