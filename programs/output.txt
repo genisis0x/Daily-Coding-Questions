@@ -1,1 +1,2 @@
+Enter the Percentage for no of people having same birthday
 70

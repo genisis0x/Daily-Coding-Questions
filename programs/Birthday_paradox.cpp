@@ -1,3 +1,6 @@
+// PIGEN_HOLE
+// https://www.geeksforgeeks.org/discrete-mathematics-the-pigeonhole-principle/
+
 // Created by Manmeet Singh Parmar
 #include <bits/stdc++.h>
 using namespace std;
@@ -47,6 +50,7 @@ int main()
     cin.tie(NULL);
 
     float per; // the percentage which we need
+    cout << "Enter the Percentage for no of people having same birthday"<<"\n";
     cin>>per;
     per /=100;
     float num = 365;
