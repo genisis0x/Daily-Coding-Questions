@@ -36,22 +36,6 @@ typedef vector<ll> vl;
 #define gcd(a, b) __gcd(num1 , num2)
 using namespace std;
 
-
-
-
-
-void util(string s)
-{
-    int n = s.size();
-    int c = 0;
-    F0R(i, n)
-        c = (s[i] == '1') ? c + 1 : c;
-    if(c & 1)
-        cout<<"WIN";
-    else
-        cout<<"LOSE";
-}
-
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -65,10 +49,21 @@ int main()
     int t;
     cin>>t;
     while(t--){
-        string s;
-        cin>>s;
-        util(s);
-        cout<<endl;
+    	
+    	priority_queue <int> pq;
+    	int n;
+    	cin>>n;
+    	F0R(i, n)
+    	{
+    		int a;
+    		cin>>a;
+    		pq.push(a);
+    	}
+    	while(!pq.empty())
+    	{
+    		cout<<pq.top()<<endl;
+    		pq.pop();
+    	}
         }
     return 0;
 }
