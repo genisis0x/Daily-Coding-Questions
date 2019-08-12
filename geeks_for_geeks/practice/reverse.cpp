@@ -1,4 +1,4 @@
-// https://www.geeksforgeeks.org/chocolate-distribution-problem/
+// https://practice.geeksforgeeks.org/problems/reverse-array-in-groups/0/?track=sp-arrays-and-searching&batchId=152
 // PASSED
 // Created by Manmeet Singh Parmar
 #include <bits/stdc++.h>
@@ -39,15 +39,16 @@ typedef vector<ll> vl;
 using namespace std;
 
 
-void util(vi &arr, int n, int m)
+void util(vi &arr, int n, int k)
 {
-	sort(arr.begin(), arr.end());
-	// F0R(i, n)
-	// 	cout<<arr[i]<<" "<<endl;
-	int min = INT_MAX;
-	for(int i = 0, j = m-1 + i; i + j < n; i++)
-		min = ((arr[j + i] - arr[i]) < min) ? (arr[j + i] - arr[i]) : min;
-	cout<<min<<endl;
+	for(int i = 0; i < n; i += k)
+	{
+		int start = i;
+		int end = min(start + k -1, n-1);
+
+		while(start < end)
+			swap(arr[start++], arr[end--]);
+	}
 }
 
 int main()
@@ -65,11 +66,14 @@ int main()
     while(t--){
         int n;
         cin>>n;
+        int k; cin>>k;
         vi v(n);
         F0R(i,n)
         	cin>>v[i];
-        int m; cin >>m;
-        util(v, n, m);
+        util(v, n, k);
+        F0R(i, n)
+        	cout<<v[i]<<" ";
+        cout<<"\n";
         }
     return 0;
 }

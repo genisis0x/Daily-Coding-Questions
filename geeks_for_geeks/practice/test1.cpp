@@ -1,6 +1,4 @@
-// https://www.geeksforgeeks.org/chocolate-distribution-problem/
-// PASSED
-// Created by Manmeet Singh Parmar
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -38,18 +36,6 @@ typedef vector<ll> vl;
 #define gcd(a, b) __gcd(num1 , num2)
 using namespace std;
 
-
-void util(vi &arr, int n, int m)
-{
-	sort(arr.begin(), arr.end());
-	// F0R(i, n)
-	// 	cout<<arr[i]<<" "<<endl;
-	int min = INT_MAX;
-	for(int i = 0, j = m-1 + i; i + j < n; i++)
-		min = ((arr[j + i] - arr[i]) < min) ? (arr[j + i] - arr[i]) : min;
-	cout<<min<<endl;
-}
-
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -68,8 +54,8 @@ int main()
         vi v(n);
         F0R(i,n)
         	cin>>v[i];
-        int m; cin >>m;
-        util(v, n, m);
+
+        cout<<endl;
         }
     return 0;
 }
