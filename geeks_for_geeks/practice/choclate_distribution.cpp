@@ -37,13 +37,15 @@ typedef vector<ll> vl;
 using namespace std;
 
 
-void util(ll n, ll k)
+void util(vi &arr, int n, int m)
 {
-    n /= k;
-    if(!(n % k))
-        cout <<"NO";
-    else
-        cout<<"YES";
+	sort(arr.begin(), arr.end());
+	// F0R(i, n)
+	// 	cout<<arr[i]<<" "<<endl;
+	int min = INT_MAX;
+	for(int i = 0, j = m-1 + i; i + j < n; i++)
+		min = ((arr[j + i] - arr[i]) < min) ? (arr[j + i] - arr[i]) : min;
+	cout<<min<<endl;
 }
 
 int main()
@@ -55,14 +57,17 @@ int main()
 
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+
     int t;
     cin>>t;
     while(t--){
-        ll N; ll K;
-        cin>>N;
-        cin>>K;
-        util(N, K);
-        cout<<endl;
+        int n;
+        cin>>n;
+        vi v(n);
+        F0R(i,n)
+        	cin>>v[i];
+        int m; cin >>m;
+        util(v, n, m);
         }
     return 0;
 }

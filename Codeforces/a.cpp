@@ -3,27 +3,27 @@
 using namespace std;
 typedef long long ll;
 typedef long double ld;
-
+ 
 typedef pair<int, int> pi;
 typedef pair<ll, ll> pl;
 typedef pair<ld, ld> pd;
-
+ 
 typedef vector<int> vi;
 typedef vector<ld> vd;
 typedef vector<ll> vl;
-
+ 
 #define FOR(i, x, n) for(ll i=x; i<(n); i++)
 #define F0R(i, n)  for(ll i=0; i<(n); i++)
 #define FORd(i, x, n) for(ll i = (n)-1; i >= x; i--)
 #define F0Rd(i,n) for(ll i = (n)-1; i >= 0; i--)
 #define FOR_B_l(i,n) for(ll i = 0; i < (1LL << n); i++)
 #define FOR_B_r(i,n) for(ll i = 0; i < (1LL >> n); i++) // typecasting of 1 in long long
-
-
+ 
+ 
 #define l_rot_n(a, n) (aLL << n) // type casting of a in long long and lef rotation of a with n;
-
+ 
 #define r_rot_n(a, n) (aLL >> n)
-
+ 
 #define mod 1000000007
 #define pi 2acos(0.0)
 #define MP make_pair
@@ -34,32 +34,37 @@ typedef vector<ll> vl;
 #define sz(x) (int)(x).size()
 #define what_is(x) cerr << #x << "is" << x << endl;
 #define gcd(a, b) __gcd(num1 , num2)
-
-
-
-int max_arr(vl &res, ll n)
+using namespace std;
+ 
+void util(int n, string s)
 {
-	ll max = 0;
+	vi arr(10, 0);
 	F0R(i, n)
 	{
-		max = (max > res[i]) ? max : res[i];
-	}
-	return max;
-}
+		if(s[i] == 'L')
+		{
+			int i = 0;
+			while(arr[i])
+				i++;
+			arr[i++] = 1;
+		
+		}
+		else if(s[i] == 'R')
+		{
 
-
-void util(vl &A, vl &B)
-{
-	ll n = A.size();
-	F0R(i, n)
-		A[i] *= 20;
-	F0R(i, n)
-	{
-		A[i] -= 10 * B[i];
-		if(A[i] < 0)
-			A[i] = 0;
+			int j = 9;
+			while(arr[j])
+				j--;
+			arr[j--] = 1;
+		}
+		
+		else
+		{
+			arr[(s[i] - '0')] = 0;
+		}
 	}
-	cout<<max_arr(A, n);
+	F0R(i, 10)
+		cout<<arr[i];
 }
 int main()
 {
@@ -67,23 +72,15 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 	#endif
-
+ 
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-
-    int t;
-    cin>>t;
-    while(t--){
-        int N;
-        cin>>N;
-        vl A(N);
-        vl B(N);
-        F0R(i,N)
-        	cin>>A[i];
-        F0R(i,N)
-        	cin>>B[i];
-        util(A,B);
-        cout<<endl;
-        }
+ 
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    util(n, s);
+    cout<<endl;
     return 0;
 }

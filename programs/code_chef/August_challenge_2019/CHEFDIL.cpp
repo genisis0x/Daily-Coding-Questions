@@ -36,10 +36,6 @@ typedef vector<ll> vl;
 #define gcd(a, b) __gcd(num1 , num2)
 using namespace std;
 
-
-
-
-
 void util(string s)
 {
     int n = s.size();

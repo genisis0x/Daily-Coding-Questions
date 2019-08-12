@@ -37,14 +37,51 @@ typedef vector<ll> vl;
 using namespace std;
 
 
-void util(ll n, ll k)
+
+void util(vl &c, vl &h)
 {
-    n /= k;
-    if(!(n % k))
-        cout <<"NO";
-    else
-        cout<<"YES";
+	int n = c.size();
+	vl t1(n + 1);
+	vl t2(n + 1);
+	FOR(i, 1, n + 1)
+	{
+		t1[i] = i - c[i];
+		t2[i] = i + c[i];
+	}
+	FOR(i, 1, n + 1)
+	{
+		if(t1[i] <= 0)
+			t1[i] = 1;
+		if(t2[i] > n)
+			t2[i] = n;
+		
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int main()
 {
@@ -55,13 +92,19 @@ int main()
 
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+
     int t;
     cin>>t;
     while(t--){
-        ll N; ll K;
-        cin>>N;
-        cin>>K;
-        util(N, K);
+        ll n;
+        cin>>n;
+        vl C(n + 1); // Radiation Power index vector
+        vl H(n + 1); // Health level;
+        FOR(i, 1, n + 1)
+        	cin>>C[i];
+        FOR(i, 1, n + 1)
+        	cin>>H[i];
+        util(C, H);
         cout<<endl;
         }
     return 0;
