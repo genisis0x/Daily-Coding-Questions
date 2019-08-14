@@ -1,2 +1,2 @@
-0
-LOSE
+NO
+YES

@@ -1,3 +1,4 @@
+// https://www.geeksforgeeks.org/difference-array-range-update-query-o1/
 // Created by Manmeet Singh Parmar
 #include <bits/stdc++.h>
 using namespace std;
@@ -34,46 +35,45 @@ typedef vector<ll> vl;
 #define sz(x) (int)(x).size()
 #define what_is(x) cerr << #x << "is" << x << endl;
 #define gcd(a, b) __gcd(num1 , num2)
-using namespace std;
 
 
 
-void util(vl &c, vl &h)
+
+vi util_differece_array(vi &arr)
 {
-	ll n = c.size();
-	vl t1(n + 1);
+	int n = arr.size();
+	vi diff(n + 1);
+	diff[0] = arr[0];
+	diff[n] = 0;
 	FOR(i, 1, n)
-	{
-		t1[max(0LL, (i - c[i]))] +=1;
-		t1[min(n, (i + c[i]) + 1)] -=1;
-	}
-	FOR(i, 0, n + 1)
-		t1[i] += t1[i -1];
-	// F0R(i, n+1)
-	// 	cout<<t1[i];
-	// cout<<endl;
-	// F0R(i, n)
-	// 	cout<<h[i];
-	// cout<<endl;
-	sort(t1.begin(), t1.end());
-	sort(h.begin(), h.end());
-	
-	// F0R(i, n+1)
-	// 	cout<<t1[i];
-	// cout<<endl;
-	// F0R(i, n)
-	// 	cout<<h[i];
-	// cout<<endl;
-	int i = 1;
-	while(i < n)
-	{
-		if(t1[i] == h[i])
-			i++;
-		else
-			break;
-	}
-	(i == n) ? cout<<"YES" : cout<<"NO";
+		diff[i] = arr[i] - arr[i - 1];
+	return diff;
 }
+
+
+void update_query(vi &diff, int l, int r, int value)
+{
+	diff[l] += value;
+	diff[r + 1] -= value;
+}
+
+
+void print_array(vi &arr, vi &diff)
+{
+	int n = arr.size();
+	F0R(i, n)
+	{
+		if(i == 0)
+			arr[i] = diff[i];
+		else
+			arr[i] = diff[i] + arr[i - 1];
+		cout<<arr[i]<<" ";
+	}
+}
+
+
+
+
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -87,15 +87,14 @@ int main()
     int t;
     cin>>t;
     while(t--){
-        ll n;
+        int n;
         cin>>n;
-        vl C(n); // Radiation Power index vector
-        vl H(n); // Health level;
-        FOR(i, 0, n + 1)
-        	cin>>C[i];
-        FOR(i, 0, n + 1)
-        	cin>>H[i];
-        util(C, H);
+        vi v(n);
+        F0R(i,n)
+        	cin>>v[i];
+        vi diff = util_differece_array(v);
+        update_query(diff, 0, 1, 10);
+        print_array(v, diff);
         cout<<endl;
         }
     return 0;
