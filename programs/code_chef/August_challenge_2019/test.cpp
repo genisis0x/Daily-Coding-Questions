@@ -34,28 +34,7 @@ typedef vector<ll> vl;
 #define sz(x) (int)(x).size()
 #define what_is(x) cerr << #x << "is" << x << endl;
 #define gcd(a, b) __gcd(num1 , num2)
-using namespace std;
 
-
-
-void util(vl &c, vl &h)
-{
-	ll n = c.size();
-	vl t1(n + 1, 0);
-	FOR(i, 0, n)
-	{
-		t1[max(0LL, (i - c[i]))] +=1;
-		t1[min(n, (i + c[i] + 1))] -=1;
-	}
-	FOR(i, 1, n)
-		t1[i] += t1[i -1];
-	sort(t1.begin(), t1.end());
-	sort(h.begin(), h.end());
-	if(equal(t1.begin() + 1, t1.end(), h.begin()))
-		cout<<"YES";
-	else
-		cout<<"NO";
-}
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -69,15 +48,12 @@ int main()
     int t;
     cin>>t;
     while(t--){
-        ll n;
+        int n;
         cin>>n;
-        vl C(n); // Radiation Power index vector
-        vl H(n); // Health level;
-        FOR(i, 0, n)
-        	cin>>C[i];
-        FOR(i, 0, n)
-        	cin>>H[i];
-        util(C, H);
+        vi v(n);
+        F0R(i,n)
+        	cin>>v[i];
+
         cout<<endl;
         }
     return 0;
