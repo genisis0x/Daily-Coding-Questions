@@ -41,38 +41,24 @@ using namespace std;
 void util(vl &c, vl &h)
 {
 	ll n = c.size();
-	vl t1(n + 1);
-	FOR(i, 1, n)
+	vl t1(n + 1, 0);
+	FOR(i, 0, n)
 	{
 		t1[max(0LL, (i - c[i]))] +=1;
-		t1[min(n, (i + c[i]) + 1)] -=1;
+		t1[min(n, (i + c[i] + 1))] -=1;
 	}
-	FOR(i, 0, n + 1)
-		t1[i] += t1[i -1];
 	// F0R(i, n+1)
 	// 	cout<<t1[i];
 	// cout<<endl;
-	// F0R(i, n)
-	// 	cout<<h[i];
-	// cout<<endl;
+	FOR(i, 1, n)
+		t1[i] += t1[i -1];
 	sort(t1.begin(), t1.end());
 	sort(h.begin(), h.end());
-	
-	// F0R(i, n+1)
-	// 	cout<<t1[i];
-	// cout<<endl;
-	// F0R(i, n)
-	// 	cout<<h[i];
-	// cout<<endl;
-	int i = 1;
-	while(i < n)
-	{
-		if(t1[i] == h[i])
-			i++;
-		else
-			break;
-	}
-	(i == n) ? cout<<"YES" : cout<<"NO";
+	int i = 0;
+	if(equal(t1.begin() + 1, t1.end(), h.begin()))
+		cout<<"YES";
+	else
+		cout<<"NO";
 }
 int main()
 {
@@ -91,9 +77,9 @@ int main()
         cin>>n;
         vl C(n); // Radiation Power index vector
         vl H(n); // Health level;
-        FOR(i, 0, n + 1)
+        FOR(i, 0, n)
         	cin>>C[i];
-        FOR(i, 0, n + 1)
+        FOR(i, 0, n)
         	cin>>H[i];
         util(C, H);
         cout<<endl;
