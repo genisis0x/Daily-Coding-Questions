@@ -39,13 +39,12 @@ typedef vector<ll> vl;
 void util(vi &arr, int start, int end)
 {
 	int c = 0;
-	map<int, int> ref;
+	map <int, int> ref;
 	FOR(i, start, end + 1)
 			ref[arr[i]] +=1;
 	c = ref.size();
 	(end == (arr.size() - 1)) ? cout<<c : cout<<c<<" ";
 }
-
 
 void coutDistinct(vi &arr, int k, int n)
 {
