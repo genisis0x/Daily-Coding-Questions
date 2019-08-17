@@ -1,3 +1,5 @@
+//PASSED
+// https://practice.geeksforgeeks.org/problems/find-first-and-last-occurrence-of-x/0/?track=sp-arrays-and-searching&batchId=152
 #include <bits/stdc++.h>
 using namespace std;
 int first_binarysearch(int arr[],int l,int r,int x, int n)
@@ -60,8 +62,10 @@ int main()
         int x;
         cin>>x;
         cout<<first_binarysearch(arr, 0, n-1, x, n)<<" ";
-        if(first_binarysearch(arr, 0, n-1, x, n) == -1)
+        if(first_binarysearch(arr, 0, n-1, x, n) == -1){
+            cout<<endl;
             continue;
+        }
         cout<<last_binarysearch(arr, 0, n-1, x, n);
         cout<<endl;
         }
