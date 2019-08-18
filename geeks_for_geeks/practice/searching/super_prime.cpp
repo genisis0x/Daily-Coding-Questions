@@ -1,3 +1,4 @@
+// Created by Manmeet Singh Parmar
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -34,7 +35,29 @@ typedef vector<ll> vl;
 #define sz(x) (int)(x).size()
 #define what_is(x) cerr << #x << "is" << x << endl;
 #define gcd(a, b) __gcd(num1 , num2)
-using namespace std;
+
+void util(ll n)
+{
+	F0R(i, n)
+	{
+		if(i == 0 || i == 1 || i == 2 || i == 3)
+			continue;
+		else
+			is_prime()
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 int main()
 {
@@ -49,12 +72,9 @@ int main()
     int t;
     cin>>t;
     while(t--){
-        int n;
+        ll n;
         cin>>n;
-        vi v(n);
-        F0R(i,n)
-        	cin>>v[i];
-
+        util(n);
         cout<<endl;
         }
     return 0;

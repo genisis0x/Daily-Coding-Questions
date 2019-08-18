@@ -1,4 +1,3 @@
-// https://www.geeksforgeeks.org/difference-array-range-update-query-o1/
 // Created by Manmeet Singh Parmar
 #include <bits/stdc++.h>
 using namespace std;
@@ -38,42 +37,16 @@ typedef vector<ll> vl;
 
 
 
-
-vi util_differece_array(vi &arr)
+void util(vi &arr, int n, int x)
 {
-	int n = arr.size();
-	vi diff(n + 1);
-	diff[0] = arr[0];
-	diff[n] = 0;
-	FOR(i, 1, n)
-		diff[i] = arr[i] - arr[i - 1];
-	return diff;
-}
-
-
-void update_query(vi &diff, int l, int r, int value)
-{
-	diff[l] += value;
-	diff[r + 1] -= value; 
-}
-
-
-void print_array(vi &arr, vi &diff)
-{
-	int n = arr.size();
+	map<int,int> hash;
 	F0R(i, n)
-	{
-		if(i == 0)
-			arr[i] = diff[i];
-		else
-			arr[i] = diff[i] + arr[i - 1];
-		cout<<arr[i]<<" ";
-	}
+		hash[arr[i]] += 1;
+	if(hash[x] == 0)
+		cout<<-1;
+	else
+		cout<<hash[x];
 }
-
-
-
-
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -89,12 +62,11 @@ int main()
     while(t--){
         int n;
         cin>>n;
+        int x; cin>>x;
         vi v(n);
         F0R(i,n)
         	cin>>v[i];
-        vi diff = util_differece_array(v);
-        update_query(diff, 0, 1, 10);
-        print_array(v, diff);
+        util(v, n, x);
         cout<<endl;
         }
     return 0;
