@@ -57,9 +57,6 @@ void util_segment_tree(vi &arr, int n)
         	cout<<ref[i];
 }
 
-
-
- 
 int main()
 {
    	#ifndef ONLINE_JUDGE

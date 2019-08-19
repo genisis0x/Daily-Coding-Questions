@@ -38,57 +38,7 @@ typedef vector<ll> vl;
 
 void util(vector< vector <int> > &g, int n)
 {
-	int dist = 0;
-	int max = INT_MIN;
-	int l_dist = 0;
-	int r_dist = 0;
-	int i_dx = 0;
-	int rr_dist = 0;
-	int ll_dist = 0;
-	F0R(i, n)
-	{
-		F0R(j, n)
-		{
-			rr_dist = 0;
-			ll_dist = 0;
-			if (j >= n/2)
-			{
-				if(g[i][j] == 1)
-				{
-					rr_dist += 1;
-					r_dist += 1;
-				}
-			}
-			else
-			{
-				if(g[i][j] == 1)
-				{
-					ll_dist += 1;
-					l_dist +=1;
-				}
-			}
-		}
-		//cout<<abs(l_dist - r_dist)<<"\n";
-		if(max < abs(ll_dist - rr_dist))
-		{
-			max = abs(ll_dist - rr_dist);
-			i_dx = i;
-		}
-	}
-	//cout<<l_dist<<r_dist<<"\n";
-	dist = abs(l_dist - r_dist);
-	int j = 0;
-	int dist_temp = dist;
-	//int flag = 1;
-	while(j < n /2)
-	{
-		dist_temp -= 2 *g[i_dx][j];
-		j++;
-	}
-	if(dist_temp < dist)
-		cout<<dist_temp;
-	else
-		cout<<dist;
+
 }
 int main()
 {
@@ -105,17 +55,33 @@ int main()
     while(t--){
         int n;
         cin>>n;
-        vector< vector <int> > g(n);
-        F0R(i,n)
+        vi a(n);
+        F0R(i, n)
         {
-        	g[i] = vector<int>(n);
+        	a[i] = 0;
+        	string str;
+        	cin>>str;
         	F0R(j,n)
         	{
-        		cin>>g[i][j];
+        		if(str[j] == '0')
+        			continue;
+        		if((j) / (n/2))
+        			a[i]--;
+        		else
+        			a[i]++;
         	}
         }
-        util(g, n);
-        cout<<endl;
+        int sum =0;
+        F0R(i, n)
+        {
+        	sum += a[i];
+        }
+        int ans = abs(sum);
+        F0R(i, n)
+        {
+        	ans = min(ans, abs(sum - 2*a[i]));
+        }
+        cout<<ans<<endl;
         }
     return 0;
 }
