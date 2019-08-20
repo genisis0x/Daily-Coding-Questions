@@ -1,3 +1,4 @@
+//PASSED
 // Created by Manmeet Singh Parmar
 #include <bits/stdc++.h>
 using namespace std;
@@ -54,6 +55,11 @@ int main()
    int c = 0;
    int one = 0, zero = 0;
    int one_r = 0, zero_r = 0;
+   if(s[i] == '0')
+   {
+      cout<<0<<"\n";
+      return 0;
+   }
    while(i < 100)
    
    	{
@@ -70,14 +76,7 @@ int main()
    			zero++;
    		i++;
    	}
-   	//cout<<one<<"\n";
    	r = r.substr(100 - n, n);
-   	// if(r.compare(s) == 0)
-   	// {
-   	// 	c = one;
-   	// 	cout<<c<<"\n";
-   	// 	return 0;
-   	// }
    	i = 0;
    	while(i < n)
    	{
@@ -87,7 +86,7 @@ int main()
    			zero_r++;
    		i++;
    	}
-   	if(one == 1)
+   	if(one == 1 && r[0] == '1')
    		cout<<one_r - 1;
    	else
    		cout<<one_r;

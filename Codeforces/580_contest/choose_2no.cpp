@@ -39,30 +39,9 @@ typedef vector<ll> vl;
 
 void util (vi &arr1, int n, vi &arr2, int m)
 {
-	// map <int, int> hm1;
-	// F0R(i, n)
-	// {
-	// 	hm1[arr1[i]] = 1;
-	// }
-	// F0R(i, m)
-	// {
-	// 	hm1[arr2[i]] = 1;
-	// }
 	sort(arr1.begin(), arr1.end());
 	sort(arr2.begin(), arr2.end());
 	cout<<arr1[n -1]<<" "<<arr2[m -1]<<"\n";
-	// for(int i = 0; i < n; i++)
-	// {
-	// 	for(int j = 0; j < m; j++)
-	// 	{
-	// 		if(!hm1[arr1[i] + arr2[j]])
-	// 		{
-	// 			cout<<arr1[i]<<" ";
-	// 			cout<<arr2[j]<<"\n";
-	// 			return;	
-	// 		}
-	// 	}
-	// }
 }
 
 int main()
