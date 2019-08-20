@@ -36,35 +36,6 @@ typedef vector<ll> vl;
 #define gcd(a, b) __gcd(num1 , num2)
 
 
-
-void util (vi &arr1, int n, vi &arr2, int m)
-{
-	// map <int, int> hm1;
-	// F0R(i, n)
-	// {
-	// 	hm1[arr1[i]] = 1;
-	// }
-	// F0R(i, m)
-	// {
-	// 	hm1[arr2[i]] = 1;
-	// }
-	sort(arr1.begin(), arr1.end());
-	sort(arr2.begin(), arr2.end());
-	cout<<arr1[n -1]<<" "<<arr2[m -1]<<"\n";
-	// for(int i = 0; i < n; i++)
-	// {
-	// 	for(int j = 0; j < m; j++)
-	// 	{
-	// 		if(!hm1[arr1[i] + arr2[j]])
-	// 		{
-	// 			cout<<arr1[i]<<" ";
-	// 			cout<<arr2[j]<<"\n";
-	// 			return;	
-	// 		}
-	// 	}
-	// }
-}
-
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -75,15 +46,51 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int n; // no of ele of A
-    cin>>n;
-    vi v1(n);
-    F0R(i,n)
-    	cin>>v1[i];
-    int m; cin >>m;
-    vi v2(m);
-    F0R(i,m)
-    	cin>>v2[i];
-    util(v1, n, v2, m);
-    return 0;
+   string s;
+   cin>>s;
+   int n = s.length();
+   string r = "";
+   int i = 0;
+   int c = 0;
+   int one = 0, zero = 0;
+   int one_r = 0, zero_r = 0;
+   while(i < 100)
+   
+   	{
+   		r.PB('0');
+   		r.PB('1');
+   		i +=2;
+   	}
+   	i = 0;
+   	while(i < n)
+   	{
+   		if(s[i] == '1')
+   			one++;
+   		else
+   			zero++;
+   		i++;
+   	}
+   	//cout<<one<<"\n";
+   	r = r.substr(100 - n, n);
+   	// if(r.compare(s) == 0)
+   	// {
+   	// 	c = one;
+   	// 	cout<<c<<"\n";
+   	// 	return 0;
+   	// }
+   	i = 0;
+   	while(i < n)
+   	{
+   		if(r[i] == '1')
+   			one_r++;
+   		else
+   			zero_r++;
+   		i++;
+   	}
+   	if(one == 1)
+   		cout<<one_r - 1;
+   	else
+   		cout<<one_r;
+   	cout<<endl;
+   return 0;
 }

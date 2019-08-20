@@ -35,36 +35,6 @@ typedef vector<ll> vl;
 #define what_is(x) cerr << #x << "is" << x << endl;
 #define gcd(a, b) __gcd(num1 , num2)
 
-
-
-void util (vi &arr1, int n, vi &arr2, int m)
-{
-	// map <int, int> hm1;
-	// F0R(i, n)
-	// {
-	// 	hm1[arr1[i]] = 1;
-	// }
-	// F0R(i, m)
-	// {
-	// 	hm1[arr2[i]] = 1;
-	// }
-	sort(arr1.begin(), arr1.end());
-	sort(arr2.begin(), arr2.end());
-	cout<<arr1[n -1]<<" "<<arr2[m -1]<<"\n";
-	// for(int i = 0; i < n; i++)
-	// {
-	// 	for(int j = 0; j < m; j++)
-	// 	{
-	// 		if(!hm1[arr1[i] + arr2[j]])
-	// 		{
-	// 			cout<<arr1[i]<<" ";
-	// 			cout<<arr2[j]<<"\n";
-	// 			return;	
-	// 		}
-	// 	}
-	// }
-}
-
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -75,15 +45,25 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int n; // no of ele of A
+    int n;
     cin>>n;
-    vi v1(n);
-    F0R(i,n)
-    	cin>>v1[i];
-    int m; cin >>m;
-    vi v2(m);
-    F0R(i,m)
-    	cin>>v2[i];
-    util(v1, n, v2, m);
+    if(!(n & 1))
+    {
+    	cout<<"NO";
+    	return 0;
+    }
+    vi arr(2 * n);
+    int idx = 0;
+    F0R(i, (2 *n))
+    {
+    	arr[idx] = i + 1;
+    	if(!(i & 1))
+    		idx = (idx + n) % (2 *n);
+    	else
+    		idx++;
+    }
+    cout<<"YES\n";
+    F0R(i, 2*n)
+    	cout<<arr[i]<<" "; cout<<endl;
     return 0;
 }
