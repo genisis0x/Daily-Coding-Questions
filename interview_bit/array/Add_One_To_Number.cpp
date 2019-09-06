@@ -24,10 +24,6 @@ vector<int> Solution::plusOne(vector<int> &A)
         arr[0] = carry;
     int i = 0;
     while(arr[i] == 0)
-    {
-        vector<int>::iterator it; 
-        it = arr.begin(); 
         arr.erase(arr.begin());
-    }
     return arr;
 }
