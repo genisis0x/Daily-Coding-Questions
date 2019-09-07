@@ -1,5 +1,30 @@
 // PASSED
 // https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s/0 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ {
+	int t; cin>>t;
+	while(t--){
+	    multiset <int> m;
+	    int n; cin>>n;
+	    for(int i =0; i<n; i++)
+	    {
+	        int x;
+	        cin>>x;
+	        m.insert(x);
+	    }
+	    for(auto i = m.begin(); i != m.end(); i++)
+	        cout<<*i<<" ";
+	   cout<<"\n";
+	}
+	return 0;
+}
+
+// M2
+
+/*
 #include<bits/stdc++.h>
 using namespace std;
 int main()
@@ -32,3 +57,4 @@ int main()
 	}
 	return 0;
 }
+*/
