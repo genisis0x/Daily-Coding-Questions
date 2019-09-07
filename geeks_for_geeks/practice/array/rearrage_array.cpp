@@ -5,6 +5,37 @@ using namespace std;
 typedef long long ll;
 int main()
  {
+    int t; cin>>t;
+    while(t--)
+    {
+        int n; cin>>n; vector<int> v(n);
+        for(int i=0; i<n; i++)
+            cin>>v[i];
+        int size = n / 2;
+        int start = 0;
+        int end = n - 1;
+        while(size--)
+        {
+            cout<<v[end--]<<" ";
+            cout<<v[start++]<<" ";
+        }
+        if(n % 2)
+            cout<<v[n / 2];
+        cout<<"\n";
+    }
+    return 0;
+}
+
+
+
+// M2
+
+/*
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main()
+ {
 	int t; cin>>t;
 	while(t--)
 	{
@@ -43,3 +74,4 @@ int main()
 	}
 	return 0;
 }
+*/
