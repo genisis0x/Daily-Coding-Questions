@@ -8,6 +8,14 @@ int main()
 	cin>>t;
 	while(t--)
 	{
+	 // 	#ifndef ONLINE_JUDGE
+		// freopen("input.txt", "r", stdin);
+		// freopen("output.txt", "w", stdout);
+		// #endif
+
+	 //    ios_base::sync_with_stdio(false);
+  //   	cin.tie(NULL);
+
 	    int x, y;
 	    cin>>x>>y;
 	    vector <long long> arr1(x);
@@ -16,23 +24,24 @@ int main()
 	        cin>>arr1[i];
 	     for(int i =0; i<y; i++)
 	        cin>>arr2[i];
-	   int i = 0; int j =0;
-	   while(i<x && j<y)
+	   	int i = x-1; int j =y-1;
+	   	while(i >= 0 && j>=0)
 	    {
-	        if(arr1[i]>arr2[j])
+	    	if(arr1[i]>arr2[j])
 	        {
 	            swap(arr1[i],arr2[j]);
+	            i--;
 	        }
-	        i++;
-	        j++;
-	        if(i==x and j!=y)
-	        {
-	            i=0;
-	        }
-	        if(i!=x && j==y)
-	        {
-	            j=0;
-	        }
+	        else
+	        	j--;
+	    }
+	    i = 0;
+	    while(i > y)
+	    {
+	    	if(arr1[x -1] > arr[i]){
+	    		swap(arr1[x -1],arr[i])
+	    		break;
+	    	}
 	    }
 	    sort(arr1.begin(), arr1.end());
 	    sort(arr2.begin(), arr2.end());
@@ -44,12 +53,6 @@ int main()
 	}
 	return 0;
 }
-
-
-
-
-
-
 
 
 // M 2
