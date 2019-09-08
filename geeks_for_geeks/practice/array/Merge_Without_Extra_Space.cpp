@@ -38,8 +38,8 @@ int main()
 	    i = 0;
 	    while(i > y)
 	    {
-	    	if(arr1[x -1] > arr[i]){
-	    		swap(arr1[x -1],arr[i])
+	    	if(arr1[x -1] > arr2[i]){
+	    		swap(arr1[x -1],arr2[i])
 	    		break;
 	    	}
 	    }
