@@ -23,3 +23,31 @@ int countOnes(int n)
         return 0;
     // Your code here
 }
+
+// M2
+
+/*
+int l_i(int n, int l, int r){
+    while(l <= r)
+    {
+        int mid = (r - l)/2 +l;
+        if(mid == 0 && arr[mid] == 0)
+            return -1;
+        if(mid == 0 && arr[mid] == 1)
+            return 0;
+        if(mid == n -1 || arr[mid + 1] == 0 && arr[mid] == 1)
+            return mid;
+        else if(arr[mid] == 1)
+            return l_i(n, mid + 1, r);
+        else
+            return l_i(n, l, mid-1);
+    }
+}
+
+int countOnes(int n)
+{
+    // int f_idx = f_i(n,0, n -1);
+    int l_idx = l_i(n, 0, n -1);
+    return l_idx + 1;
+}
+*/
