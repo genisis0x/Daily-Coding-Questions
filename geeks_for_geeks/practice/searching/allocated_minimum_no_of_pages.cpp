@@ -18,8 +18,8 @@ long long int binary(int arr[],int n,int m,int min,long long int max){
             }
             else if(arr[i]<=val && count <m)
             {
-                count++;sum=0;
-                sum+=arr[i];
+                count++;
+                sum = arr[i];
             }
             else
             {
