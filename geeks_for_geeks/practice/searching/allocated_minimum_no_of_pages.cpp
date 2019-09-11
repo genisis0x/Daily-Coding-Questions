@@ -4,7 +4,8 @@
 using namespace std;
 long long int binary(int arr[],int n,int m,int min,long long int max){
 
-    if(m>n) return -1;
+    if(m>n)
+        return -1;
     if(min<max)
     {
         int flag=0;
@@ -49,7 +50,8 @@ int main()
 
 	    for(int i=0;i<n;i++){
 	        cin>>arr[i];
-	        if(min==-1||min>arr[i])min=arr[i];
+	        if(min==-1||min>arr[i])
+                    min=arr[i];
 	        max+=arr[i];
 	   }
 	    int m; cin>>m;
