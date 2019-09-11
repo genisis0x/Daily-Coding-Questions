@@ -44,8 +44,8 @@ int main()
 	//code
 	int t;cin>>t;
 	while(t--){
-	    int n;cin>>n;
-	    int arr[n];int min=-1;
+	    int n;cin>>n; int arr[n];
+            int min=-1;
 	    long long int max=0;
 
 	    for(int i=0;i<n;i++){
