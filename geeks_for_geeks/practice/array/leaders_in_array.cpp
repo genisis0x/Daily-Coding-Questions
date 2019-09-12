@@ -1,6 +1,8 @@
 // PASSED
 // https://practice.geeksforgeeks.org/problems/leaders-in-an-array/0
 
+
+// 0.7 sec compile time
 #include<bits/stdc++.h>
 using namespace std;
 int main()
@@ -31,6 +33,8 @@ int main()
 }
 
 // M2
+
+//0.74 sec compile time
 /*
 #include<bits/stdc++.h>
 using namespace std;
