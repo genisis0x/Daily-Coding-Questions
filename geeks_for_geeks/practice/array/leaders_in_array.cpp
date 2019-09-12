@@ -1,5 +1,37 @@
 // PASSED
 // https://practice.geeksforgeeks.org/problems/leaders-in-an-array/0
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ {
+	int t; cin>>t;
+	while(t--)
+	{
+	    int n; cin>>n;
+	    vector<int> arr(n);
+	    for(int i=0; i<n; i++)
+	        cin>>arr[i];
+	    vector<int> v;
+	    int max = arr[n-1];
+	    for(int i=n-1; i>=0; i--)
+	    {
+	        if(arr[i] >= max)
+	        {
+	            max = arr[i];
+	            v.push_back(arr[i]);
+	        }
+	    }
+	    reverse(v.begin(), v.end());
+	    for(auto i=v.begin(); i!=v.end(); i++)
+	        cout<<*i<<" ";
+	    cout<<"\n";
+	}
+	return 0;
+}
+
+// M2
+/*
 #include<bits/stdc++.h>
 using namespace std;
 int main()
@@ -32,3 +64,4 @@ int main()
 	}
 	return 0;
 }
+*/
