@@ -17,7 +17,7 @@ void maker()
             arr[i] += (arr[j-1] * arr[i-j]);
     }
 }
-int main()
+inert main()
  {
 	int t; cin>>t;
 	maker();
