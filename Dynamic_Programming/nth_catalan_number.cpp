@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
-#include <boost/multiprecision/cpp_int.hpp>
-using boost::multiprecision::cpp_int;
+#include <boost/multiprecision/cpp_int.hpp> // Lib used to handle the int of bigger size LINK-> https://www.geeksforgeeks.org/advanced-c-boost-library/  
+using boost::multiprecision::cpp_int; // using the namespace of boost
 using namespace std;
 typedef long long ll;
 typedef long double ld;
