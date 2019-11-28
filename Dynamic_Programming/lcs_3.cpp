@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 #include<string>
 using namespace std;
-
+// https://hack.codingblocks.com/app/contests/1108/p/1031
 int lcs_3(string s1, string s2, string s3, int n, int m, int k)
 {
 	// Recursion Solution
