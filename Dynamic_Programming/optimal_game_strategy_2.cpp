@@ -9,6 +9,7 @@ int optimal_game(int arr[], int s, int e, int dp[])
 		return arr[e];
 	else if(s+1==e)
 		return max(arr[s], arr[e]);
+	if(dp[s])
 	else
 	{
 		int a = arr[s] += min(optimal_game(arr, s+1, e-1), optimal_game(arr, s+2, e));
@@ -28,8 +29,9 @@ int main()
 	int arr[n];
 	for(int i=0; i<n; i++)
 		cin>>arr[i];
-	int dp[n];
-	for(int )
+	int dp[n+1];
+	for(int i=0; i<=n; i++)
+		dp[i] = 0;
 	cout<<optimal_game(arr,0, n-1, dp)<<endl;
 	return 0;
 }
