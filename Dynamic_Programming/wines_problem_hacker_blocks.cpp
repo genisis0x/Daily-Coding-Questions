@@ -29,16 +29,21 @@ int top_bottom(int arr[], int s, int e, int y)
 int maximunProfit_bottom_up(int cost[], int size)
 {
 	int dp[size][size]; // 2-D array stores the optimal action for each state start,end
+	
 	int sell[size][size]; // 2-D array to store the beg and end 
+	
 	int start, end; // Index to traverse from beginning and ending.
+	
 	for(start = size-1; start >= 0; start--) 
 	{
 		for(end = 0; end < size; end++)
 		{
 			if(start > end) // This is the base case when all the values are set to 0.
 				dp[start][end] = 0;
+			
 			else if(start == end) // if the start and end is same it implies that last element is executed.
 				dp[start][end] = size * cost[start];
+			
 			else // Evaluate the maximum profit.
 			{
 				int year = (size-(end-start)); // The year at any stage is the length of elements which are not in range of start to end.
