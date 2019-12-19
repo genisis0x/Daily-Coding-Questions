@@ -23,6 +23,25 @@ int ladder(int arr[], int n, int k, int dp[])
 	return dp[n] = sum;
 }
 
+int ladder_bottom_up(int arr[], int k, int n)
+{
+	int dp[n+1];
+	for(int i=0; i<=n; i++)
+		dp[i]=0;
+	dp[0] = 1;
+	for(int i=1; i<=n; i++)
+	{
+		for(int j=1; j<=k; j++)
+			if(i-j>=0 && arr[i-j] !=1)
+				dp[i] += dp[i-j];
+	}
+	// for(int i=0; i<=n; i++)
+	// 	cout<<dp[i]<<" ";
+	// cout<<"\n";
+	return dp[n];
+}
+
+
 int main()
 {
 	#ifndef ONLINE_JUDGE
@@ -37,6 +56,7 @@ int main()
 		dp[i] = 0;
 	for(int i=0; i<n; i++)
 		cin>>arr[i];
-	cout<<ladder(arr, n, k, dp)<<endl;
+	// cout<<ladder(arr, n, k, dp)<<endl;
+	cout<<ladder_bottom_up(arr, k, n);
 	return 0;
  }
