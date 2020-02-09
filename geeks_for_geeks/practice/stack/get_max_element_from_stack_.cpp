@@ -64,12 +64,29 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     Mystack s;
-    for(int i=0; i <= 10; ++i)
-        s.push(i);
-    for(int i=0; i <= 10; ++i)
-    {
-        cout << "Max ele: "  << s.maxVal() << endl;
-        cout << "Poped ele is : " << s.pop() << endl;
-    }
+    // for(int i=0; i <= 10; ++i)
+    //     s.push(i);
+    // for(int i=0; i <= 10; ++i)
+    // {
+    //     cout << "Max ele: "  << s.maxVal() << endl;
+    //     cout << "Poped ele is : " << s.pop() << endl;
+    // }
+    s.push(3); 
+    s.push(5); 
+    cout << s.maxVal() << endl; 
+    s.push(7); 
+    s.push(19); 
+    cout << s.maxVal() << endl; 
+    cout << s.pop() << endl; 
+    cout << s.maxVal() << endl; 
+    cout << s.pop() << endl; 
+    // s.peek();
     return 0;
 }
+
+
+
+
+
+
+// value - max_val 

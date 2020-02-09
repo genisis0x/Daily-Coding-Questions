@@ -1,22 +1,5 @@
-Max ele: 10
-Poped ele is : 10
-Max ele: 9
-Poped ele is : 9
-Max ele: 8
-Poped ele is : 8
-Max ele: 7
-Poped ele is : 7
-Max ele: 6
-Poped ele is : 6
-Max ele: 5
-Poped ele is : 5
-Max ele: 4
-Poped ele is : 4
-Max ele: 3
-Poped ele is : 3
-Max ele: 2
-Poped ele is : 2
-Max ele: 1
-Poped ele is : 1
-Max ele: 0
-Poped ele is : 0
+5
+19
+19
+7
+7
