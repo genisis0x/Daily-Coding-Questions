@@ -1,26 +1,21 @@
-function isopenbracket(char)
-{
+function isopenbracket(char){
     return (char == '(' || char == '[' || char =='{' || char == '(');
 }
 
-function isclosebracket(char)
-{
+function isclosebracket(char){
     return (char == ')' || char == ']' || char =='}' || char == ')');
 }
 
-function validbracket(charone, charsecond)
-{
+function validbracket(charone, charsecond){
     return ((charone == '(' && charsecond == ')') || (charone == '[' && charsecond == ']') 
     || (charone == '{' && charsecond == '}'));
 }
 
-function isoperator(char)
-{
+function isoperator(char){
     return (char == '+' || char == '-' || char == '*' || char == '/');
 }
 
-function calculate(value1, operator, value2)
-{
+function calculate(value1, operator, value2){
     if(operator == '*')
         return ((value1 - '0') * (value2 - '0'));
     else if(operator == '+')
