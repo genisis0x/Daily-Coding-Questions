@@ -1,5 +1,7 @@
-3
-5 3 4
-13 8 1
-760399384224 5 1
-8198624862486
+6
+gaga
+abcde
+rotor
+xyzxy
+abbaab
+ababcad
