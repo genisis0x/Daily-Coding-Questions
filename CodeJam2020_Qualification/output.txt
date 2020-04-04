@@ -1,0 +1,4 @@
+Case #1: JCC
+Case #2: IMPOSSIBLE
+Case #3: CJJCC
+Case #4: CC
