@@ -35,6 +35,26 @@ typedef vector<ll> vl;
 #define what_is(x) cerr << #x << "is" << x << endl;
 #define gcd(a, b) __gcd(num1 , num2)
 
+ll factors(ll n) {
+  ll cnt = 0LL;
+  while (n % 2 == 0)  
+    {  
+        cnt++;  
+        n = n/2;  
+    }
+    for (ll i = 3; i <= sqrt(n); i = i + 2)  
+    {  
+        while (n % i == 0)  
+        {  
+            cnt++;  
+            n = n/i;  
+        }  
+    }  
+    if (n > 2) 
+        cnt++;
+      return cnt;  
+}
+
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -52,30 +72,13 @@ int main()
     // each value+1 mulitply -> x
     
     while(t--){
-    	map<ll, ll> hm;
         ll x,k; cin >> x >> k;
-        while((x&1)==0) {
-        	hm[2]++;
-        	x >>= 1;
-        }
-        for(int i=3; i<= sqrt(x); i+=2)
-        {
-        	while(x%i == 0)
-        	{
-        		hm[i]++;
-        		x >>= i;
-        	}
-        }
-        if(x>2)
-        	hm[x]++;
-        ll minRange = hm.size();
-        ll MaxRange = 0;
-       	for(ll i: hm)
-       		MaxRange += i.second;
-       	if(minRange <=K && k >= MaxRange)
-       		cout << "1\n";
-       	else
-       		cout << "0\n";
-       }
+        ll factorsA = factors(x);
+        // cout << factorsA << '\n';
+        if(factorsA>=k)
+          cout << 1 << '\n';
+        else
+          cout << 0 << '\n';
+      }
     return 0;
 }
