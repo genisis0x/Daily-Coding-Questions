@@ -39,40 +39,90 @@ int32_t main()
 
     int t;
     cin>>t;
+    // Method 1  - > Traverse  k from k = 1 till k_max;
     while(t--) {
     	string s,r; cin >> s >> r;
-		int n = s.length();
-		bool check = 0;
-		int count_equal = 0;
-		int k_max = 0;
-		int l_min = 0;
-		vi equal_values;
-		for(int i=0; i<n; i++) {
-			if(s[i]==r[i]) {
-				if(check)
-					count_equal++;
-			}
-			else {
-				if(!check) {
-					k_max++;
-					check = 1;
-				}
-				l_min++;
-				if(count_equal > 0) {
-					equal_values.PB(count_equal);
-					count_equal = 0;
-					k_max++;
-				}
-			}
-		}
-		sort(equal_values.begin(), equal_values.end());
-		int ans = k_max*l_min;
-		for(int equ_val : equal_values) {
-			l_min += equ_val;
-			k_max -= 1;
-			ans = min(ans, k_max*l_min);
-		}
-		cout << ans << '\n';
-	}		
+    	int n = s.length();
+    	if(s==r) {
+    		cout << 0 << '\n';
+    		continue;
+    	}
+    	int i = 0;
+    	while(i < n) {
+    		if(s[i]==r[i])
+    			i++;
+    		else
+    			break;
+    	}
+    	int j = 0;
+    	while(j < n) {
+    		if(s[n-j-1]==r[n-j-1])
+    			j++;
+    		else
+    			break;
+    	}
+    	int l_max = n - i - j; // values of l_max excluding the starting \
+    	same values and ending same values;
+    	int k_min = 1;
+    	int ans = k_min*l_max;
+    	vi equal_intervals;
+    	int count = 0;
+    	for(; i < n; i++) {
+    		if(s[i]==r[i])
+    			count++;
+    		else
+    		{
+    			if(count>0)
+    				equal_intervals.PB(count);
+    			count = 0;
+    		}
+    	}
+    	sort(equal_intervals.begin(), equal_intervals.end(), greater<int>());
+    	for(int equal_iterval : equal_intervals) {
+    		l_max -= equal_iterval;
+    		k_min++;
+    		// cout << k_min*l_max << '\n';
+    		ans = min(ans, k_min*l_max);
+    	}
+    	cout << ans << '\n';
+    }
+
+
+    // Method 2: - > Traverse  k from k = k_max till 1;
+ //    while(t--) {
+ //    	string s,r; cin >> s >> r;
+	// 	int n = s.length();
+	// 	bool check = 0;
+	// 	int count_equal = 0;
+	// 	int k_max = 0;
+	// 	int l_min = 0;
+	// 	vi equal_values;
+	// 	for(int i=0; i<n; i++) {
+	// 		if(s[i]==r[i]) {
+	// 			if(check)
+	// 				count_equal++;
+	// 		}
+	// 		else {
+	// 			if(!check) {
+	// 				k_max++;
+	// 				check = 1;
+	// 			}
+	// 			l_min++;
+	// 			if(count_equal > 0) {
+	// 				equal_values.PB(count_equal);
+	// 				count_equal = 0;
+	// 				k_max++;
+	// 			}
+	// 		}
+	// 	}
+	// 	sort(equal_values.begin(), equal_values.end());
+	// 	int ans = k_max*l_min;
+	// 	for(int equ_val : equal_values) {
+	// 		l_min += equ_val;
+	// 		k_max -= 1;
+	// 		ans = min(ans, k_max*l_min);
+	// 	}
+	// 	cout << ans << '\n';
+	// }		
     return 0;
 }
