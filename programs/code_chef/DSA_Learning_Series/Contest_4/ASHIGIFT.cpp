@@ -49,7 +49,7 @@ int32_t main()
     	FOR(i,B) 
     		cin >> x >> y, 
     		max_chefs += y, 
-    		negatives.PB({x,-y});
+    		negatives.push_back({x,-y});
     	int c; cin >> c;
     	int p,q,r;
     	vector<pair<pair<int, int>, int> > positives;
@@ -63,9 +63,10 @@ int32_t main()
     		cout << max_chefs+1 << '\n';
     		continue;
     	}
+    	// function to check if value of chef taken is ok or not.
     	auto isok = [&](int check_chef){
     		int i=0, j = 0;
-			while(i < B && j < c) {
+    		while(i < B && j < c) {
 				if(negatives[i].first > positives[j].first.first) {
 					if(check_chef >= positives[j].first.second)
 						check_chef += positives[j].second;
@@ -96,7 +97,7 @@ int32_t main()
     	// for(auto i : negatives)
     	// 	cout << i.second << ' ';
     	// cout << max_chefs << '\n';
-    	
+    	// Binary search
     	int low = 0;
     	int high = max_chefs;
     	while(low < high) {
